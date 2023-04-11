@@ -12,7 +12,7 @@ namespace Aspose.BarCode.Examples.CSharp.BarcodeRecognition
         {
             Console.OutputEncoding = Encoding.Unicode;
             string path = GetReadFolder();
-            using (BarCodeReader reader = new BarCodeReader($"{path}multiple_codes.png", DecodeType.Pdf417, DecodeType.DataMatrix, DecodeType.QR,
+            using (BarCodeReader reader = new BarCodeReader($"{path}red_car.jpg", DecodeType.Pdf417, DecodeType.DataMatrix, DecodeType.QR,
                 DecodeType.Code39Extended, DecodeType.Code128, DecodeType.RM4SCC))
             {
                 Console.WriteLine("ReadSimpleExample:");

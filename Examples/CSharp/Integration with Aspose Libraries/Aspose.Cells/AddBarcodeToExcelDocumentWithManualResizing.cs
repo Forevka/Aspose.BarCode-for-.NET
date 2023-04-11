@@ -30,7 +30,7 @@ namespace Aspose.BarCode.Examples.CSharp.Integration
             BarcodeGenerator generator = new BarcodeGenerator(EncodeTypes.Pdf417, "Aspose.Barcode Pdf417 Example");
             generator.Parameters.Resolution = Resolution;//set the barcode image resolution
             generator.Parameters.Barcode.CodeTextParameters.Location = CodeLocation.None;//make the codetext invisible
-            Bitmap image = generator.GenerateBarCodeImage();
+            var image = generator.GenerateBarCodeImage();
             MemoryStream imageStream = new MemoryStream();
             //can be in Png as raster image format
             //generator.Save(imageStream, BarCodeImageFormat.Png);

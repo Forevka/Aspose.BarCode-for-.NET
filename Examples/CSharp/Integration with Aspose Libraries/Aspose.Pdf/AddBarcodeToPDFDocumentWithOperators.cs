@@ -25,7 +25,7 @@ namespace Aspose.BarCode.Examples.CSharp.Integration
             //create barcode image into png Stream
             BarcodeGenerator generator = new BarcodeGenerator(EncodeTypes.Pdf417, "Aspose.Barcode Example");
             generator.Parameters.Resolution = Resolution;//set the barcode image resolution
-            Bitmap image = generator.GenerateBarCodeImage();
+            var image = generator.GenerateBarCodeImage();
             MemoryStream imageStream = new MemoryStream();
             generator.Save(imageStream, BarCodeImageFormat.Png);
             imageStream.Position = 0;

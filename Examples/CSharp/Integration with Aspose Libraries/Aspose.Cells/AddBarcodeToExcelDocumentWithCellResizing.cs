@@ -2,7 +2,8 @@
 //https://github.com/aspose-barcode/Aspose.BarCode-for-.NET
 using System;
 using System.IO;
-using System.Drawing;
+using Aspose.Drawing;
+using Aspose.Drawing.Imaging;
 using Aspose.BarCode.Generation;
 
 namespace Aspose.BarCode.Examples.CSharp.Integration
