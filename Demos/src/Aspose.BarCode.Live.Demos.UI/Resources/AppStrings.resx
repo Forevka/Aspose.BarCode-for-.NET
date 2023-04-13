@@ -917,7 +917,7 @@
     <value>Recognize</value>
   </data>
   <data name="BarcodeRecognizeAppTitle" xml:space="preserve">
-    <value>Barcode Reader Online</value>
+    <value>PoC VIN Code reader</value>
   </data>
   <data name="BarcodeRecognizeAppTitleSub" xml:space="preserve">
     <value>Upload your image, choose the barcode type or leave “All types” and click on “Read Barcode” button.</value>

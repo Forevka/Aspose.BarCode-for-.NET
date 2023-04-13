@@ -33,9 +33,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 pt-5 pb-5" style="min-height:450px">
-				<a href="/default" class="btn btn-success btn-lg">Home</a> <br />
+            <!--<a href="/default" class="btn btn-success btn-lg">Home</a> <br />
+            -->
 				<h1 id="ProductTitle">@Model.BarcodeRecognizeAppTitle</h1>
-				<h2 id="ProductTitleSub">@Model.BarcodeRecognizeAppTitleSub</h2>
+				<h2 id="ProductTitleSub" style="display: none">@Model.BarcodeRecognizeAppTitleSub</h2>
 				<div id="WorkPlaceHolder">
 					<div class="barcodeAppRow">
 						<div id="inputTypesContainer" class="barcodeSizes btn-group btn-group-lg " role="group">
@@ -58,7 +59,7 @@
 						</div>
 					</div>
 					<div class="barcodeAppRow">
-						<div class="btn-group">
+						<div class="btn-group" style="display: none">
 							<button id="barcodeTypeDdl" value="@Model.BarcodeTypes[0].GroupName" aria-expanded="true" data-toggle="dropdown" class="btn btn-primary btn-lg dropdown-toggle" role="button">
 								<span>@Model.BarcodeTypes[0].GroupTitle</span>
 							</button>
@@ -96,9 +97,9 @@
 </div>
 @{
 	
-	Html.RenderPartial("AppProductSection", AppProductSectionModel.BarcodeRecognize);
+	/*Html.RenderPartial("AppProductSection", AppProductSectionModel.BarcodeRecognize);
 	Html.RenderPartial("HowToSection", HowToSectionModel.BarcodeRecognize);
 	Html.RenderPartial("AppFeaturesSection", AppFeaturesSectionModel.BarcodeRecognize);
-
+	*/
 
 }

@@ -92,12 +92,12 @@ namespace  Aspose.Barcode.Live.Demos.UI.Models
 		public static BarcodeRecognizeViewModel Create(HttpContextBase httpContext)
 		{
 			var res = new BarcodeRecognizeViewModel();
-			res.BarcodeTypes = initBarcodeTypes(httpContext);
+            res.BarcodeTypes = new List<BarcodeTypeGroup>();//initBarcodeTypes(httpContext);
 
 			res.BarcodeTypes.Insert(0, new BarcodeTypeGroup
 			{
-				GroupName = "none",
-				GroupTitle = "All Types"
+				GroupName = "code39",
+				GroupTitle = "Vin code"
 			});
 
 			res.BarcodeRecognizeAppTitle = AppStrings.BarcodeRecognizeAppTitle;

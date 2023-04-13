@@ -101,9 +101,9 @@ namespace Aspose.Barcode.Live.Demos.UI.Models
 				}
 
 	            var res = reader.ReadBarCodes();
-	            foreach (var barcode in res)
+	            foreach (var barcode in res.Where(x => x.CodeTypeName.ToLower().Contains("code39")))
 	            {
-                    barCodeText += barcode.CodeTypeName + ": " + barcode.CodeText + Environment.NewLine;
+                    barCodeText = barcode.CodeText;
                 }
             });
         }
