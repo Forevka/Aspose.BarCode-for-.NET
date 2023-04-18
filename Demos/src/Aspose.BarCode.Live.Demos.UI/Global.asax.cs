@@ -45,13 +45,13 @@ namespace Aspose.Barcode.Live.Demos.UI
 		{
 			routes.RouteExistingFiles = true;
 			routes.Ignore("{resource}.axd/{*pathInfo}");
-					
 
-			routes.MapRoute(
+
+            routes.MapRoute(
 				name: "Default",
 				url: "Default",
 				defaults: new { controller = "Home", action = "Default" }
-			);
+            );
 
 			routes.MapRoute(
 				"BarcodeRecognizeRoute",
@@ -82,10 +82,11 @@ namespace Aspose.Barcode.Live.Demos.UI
 				
 				
 			);
-			
-			
 
-		}
+            routes.Redirect("", "/default");
+
+
+        }
 
 		
 	}

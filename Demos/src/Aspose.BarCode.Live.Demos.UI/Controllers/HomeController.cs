@@ -11,11 +11,8 @@ namespace Aspose.Barcode.Live.Demos.UI.Controllers
 	{
 	
 		public override string Product => (string)RouteData.Values["productname"];
-		
 
-		
-
-		public ActionResult Default()
+        public ActionResult Default()
 		{
 			ViewBag.PageTitle = "On Premise, Cloud &amp; App Based Solutions for Barcode Processing";
 			ViewBag.MetaDescription = "Build barcode generation &amp; processing applications via On Premise APIs or Cloud-based SDKs. Use cross-platform apps for Barcode generation or recognition.";
