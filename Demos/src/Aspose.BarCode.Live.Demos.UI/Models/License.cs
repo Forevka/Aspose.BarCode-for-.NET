@@ -10,7 +10,7 @@ namespace Aspose.Barcode.Live.Demos.UI.Models
 	///</Summary>
 	public static class License
 	{
-		private static string _licenseFileName = "Aspose.Total.lic";
+		private static string _licenseFileName = "Aspose.BarCode.NET.lic";
 
 		///<Summary>
 		/// SetAsposeBarCodeLicense method to Aspose.OMR License
