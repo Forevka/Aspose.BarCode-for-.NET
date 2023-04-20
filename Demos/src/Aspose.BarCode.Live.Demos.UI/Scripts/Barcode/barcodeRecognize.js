@@ -9,6 +9,8 @@
 function selectQuality(size) {
     $('#recognizeQualityContainer>button').removeClass("selected");
     $('#recognizeQualityContainer button:nth-child(' + size + ')').addClass("selected");
+
+    recognizeBarcode();
 }
 
 function selectCamera(i) {
@@ -41,6 +43,8 @@ function recognizeBarcode() {
             data.append("quality", quality);
             data.append("file", file);
             $("#recognitionLoader").show();
+            $("#scanEffect").addClass("scanning-box");
+
             $('#recognitionResult').hide();
             $.ajax({
                 type: "POST",
@@ -57,6 +61,7 @@ function recognizeBarcode() {
                 }
             }).always(function() {
                 $("#recognitionLoader").hide();
+                $("#scanEffect").removeClass("scanning-box");
                 $('#recognitionResult').show();
             });
 
@@ -77,6 +82,16 @@ $(document).ready(function() {
             $('#recognitionResult').hide();
             file = e.target.files[0];
             $('#selectedFileName').html(file.name);
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#selectedFileImage').attr('src', e.target.result).show();
+            };
+
+            reader.readAsDataURL(file);
+
+            recognizeBarcode()
         }
     });
     $("#barcodeCaptureFile").change(function (e) {
@@ -85,6 +100,16 @@ $(document).ready(function() {
             $('#recognitionResult').hide();
             file = e.target.files[0];
             $('#selectedFileName').html('Captured image');
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#selectedFileImage').attr('src', e.target.result).show();
+            };
+
+            reader.readAsDataURL(file);
+
+            recognizeBarcode()
         }
     });
 });

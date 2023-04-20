@@ -145,7 +145,7 @@ namespace Aspose.Barcode.Live.Demos.UI.Controllers
 
                             var vinCode = IsValidVin(response.BarCodeFileorText);
 
-							return Json(new { success = vinCode.Item1, foundBarcodes = vinCode.Item2 });
+							return Json(new { success = vinCode.Item1, foundBarcodes = string.IsNullOrEmpty(vinCode.Item2) ? "BarCode was not recognized." : vinCode.Item2 });
 						}
 					}
 				}

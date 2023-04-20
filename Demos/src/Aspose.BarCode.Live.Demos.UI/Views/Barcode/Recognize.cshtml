@@ -23,12 +23,13 @@
 @section scripts {
 	@Scripts.Render("~/scripts/Shared/Alert.min.js")
 	
-	@Scripts.Render("~/scripts/Barcode/barcodeRecognize.min.js")
+	@Scripts.Render("~/scripts/Barcode/barcodeRecognize.js")
 }
 @section styles {
 	
-	<link href="/css/barcode.min.css" rel="stylesheet" type="text/css" />
+	<link href="/css/barcode.css" rel="stylesheet" type="text/css" />
 }
+
 <div class="container-fluid asposetools pb5">
 	<div class="container">
 		<div class="row">
@@ -36,7 +37,15 @@
             <!--<a href="/default" class="btn btn-success btn-lg">Home</a> <br />
             -->
 				<h1 id="ProductTitle">@Model.BarcodeRecognizeAppTitle</h1>
-				<h2 id="ProductTitleSub" style="display: none">@Model.BarcodeRecognizeAppTitleSub</h2>
+                <h2 id="ProductTitleSub" style="display: none">@Model.BarcodeRecognizeAppTitleSub</h2>
+                <div class="barcodeAppRow">
+                    <div id="recognitionLoader" class="spinner-border text-success" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <div id="recognitionResult">
+                        <pre></pre>
+                    </div>
+                </div>
 				<div id="WorkPlaceHolder">
 					<div class="barcodeAppRow">
 						<div id="inputTypesContainer" class="barcodeSizes btn-group btn-group-lg " role="group">
@@ -49,7 +58,10 @@
 							</label>
 							<input id="barcodeCaptureFile" style="display: none" type="file" accept="image/*" capture />
 						</div>
-						<div id="selectedFileName">@AppStrings.NoFileSelected</div>
+                        <div id="selectedFileName">@AppStrings.NoFileSelected</div>
+                        <div id="scanEffect" class="" style="width: 30vw; height: auto; margin: auto;">
+                            <img id="selectedFileImage" src="#" alt="image" style="width: 30vw; height: auto;"  onerror="this.style.display='none'"/>
+                        </div>
 					</div>
 					<div class="barcodeAppRow">
 						<div id="recognizeQualityContainer" class="barcodeSizes btn-group btn-group-lg " role="group">
@@ -79,17 +91,10 @@
 						</div>
 					</div>
 					<a class="anchor" name="result"></a>
-					<div class="barcodeAppRow">
+					<div class="barcodeAppRow" style="display: none">
 						<button type="button" onclick="recognizeBarcode()" class="btn btn-success btn-lg">@AppStrings.BarcodeRecognize</button>
 					</div>
-					<div class="barcodeAppRow">
-						<div id="recognitionLoader" class="spinner-border text-success" role="status">
-							<span class="sr-only">Loading...</span>
-						</div>
-						<div id="recognitionResult">
-							<pre></pre>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 		</div>
