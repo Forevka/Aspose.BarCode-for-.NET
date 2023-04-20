@@ -54,10 +54,12 @@ function recognizeBarcode() {
                 data: data
             }).done(function(result) {
                 if (!result.success) {
-                    $('#recognitionResult>pre').html(result.errorMsg);
+                    if (result.errorMsg)
+                        $('#recognitionResult>pre').html(result.errorMsg);
+                    else
+                        $('#recognitionResult>pre').html(result.foundBarcodes);
                 } else {
                     $('#recognitionResult>pre').html(result.foundBarcodes);
-                    location.hash = "#result";
                 }
             }).always(function() {
                 $("#recognitionLoader").hide();
